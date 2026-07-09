@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>جديد مقالات السلجوقي</title>
+<meta name="description" content="موسوعة السلجوقي — مقالات تدبرية قرآنية وحديثية للشيخ علي خليل عباس السلجوقي التركماني الليلاني">
+<meta name="theme-color" content="#14100a">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="جديد مقالات السلجوقي">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1410;--parch:#f4ecdb;--parch2:#ece0c8;
+  --gold:#b08d34;--gold-l:#d4b25a;--gold-lt:#e8d9a8;
+  --night:#14100a;--line:rgba(176,141,52,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--parch);color:var(--ink);font-family:'Cairo',sans-serif;line-height:1.8;min-height:100vh;
+  background-image:radial-gradient(ellipse at 8% 0%,rgba(176,141,52,.09) 0%,transparent 52%),radial-gradient(ellipse at 92% 100%,rgba(31,78,107,.06) 0%,transparent 52%);
+  padding-bottom:40px;}
+
+/* HEADER */
+.hdr{background:var(--night);border-bottom:2px solid var(--gold);padding:20px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 3px 20px rgba(0,0,0,.5);}
+.hdr-seal{width:52px;height:52px;margin:0 auto 8px;background:radial-gradient(circle,#1a1408,#0e0a04);border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;}
+.hdr h1{font-family:'Amiri',serif;color:var(--gold-l);font-size:1.5rem;margin-bottom:4px;}
+.hdr p{color:#9a8060;font-size:.8rem;}
+
+/* SEARCH */
+.search-wrap{max-width:640px;margin:20px auto 8px;padding:0 18px;}
+.search-box{position:relative;}
+.search-box input{width:100%;padding:13px 44px 13px 16px;border-radius:30px;border:1.5px solid var(--line);background:#fff;font-family:'Cairo',sans-serif;font-size:.95rem;color:var(--ink);outline:none;transition:border-color .2s;}
+.search-box input:focus{border-color:var(--gold);}
+.search-box .sicon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.1rem;pointer-events:none;}
+
+/* STATS BAR */
+.stats{max-width:640px;margin:0 auto 6px;padding:0 18px;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:#8a7550;}
+
+/* GRID */
+.grid{max-width:640px;margin:14px auto 0;padding:0 18px;display:flex;flex-direction:column;gap:14px;}
+.card{background:#fff;border-radius:14px;text-decoration:none;color:var(--ink);overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.07);border:1px solid var(--line);display:flex;transition:transform .15s, box-shadow .15s;}
+.card:active{transform:scale(.98);}
+.card-accent{width:6px;flex-shrink:0;}
+.card-body{padding:16px 18px;flex:1;min-width:0;}
+.card-cat{font-size:.68rem;color:var(--gold);font-weight:700;margin-bottom:6px;}
+.card-title{font-family:'Amiri',serif;font-size:1.15rem;line-height:1.55;color:var(--night);}
+.no-results{text-align:center;color:#9a8060;padding:40px 20px;font-family:'Amiri',serif;font-size:1.1rem;display:none;}
+
+/* INSTALL BANNER */
+.install-banner{max-width:640px;margin:18px auto 0;padding:14px 18px;background:linear-gradient(135deg,var(--night),#1a1208);border:1px solid var(--gold);border-radius:14px;display:none;align-items:center;gap:12px;margin-left:18px;margin-right:18px;}
+.install-banner.show{display:flex;}
+.install-banner .itext{flex:1;color:var(--gold-lt);font-size:.85rem;}
+.install-banner button{background:var(--gold);color:var(--night);border:none;padding:8px 18px;border-radius:20px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;white-space:nowrap;}
+
+/* FOOTER */
+footer{text-align:center;margin-top:36px;padding:20px;color:#8a7550;font-size:.78rem;font-family:'Cairo',sans-serif;}
+footer .fname{font-family:'Amiri',serif;color:var(--gold);font-size:.95rem;margin-bottom:4px;}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-seal">
+    <svg width="30" height="30" viewBox="0 0 100 100"><g fill="none" stroke="#d4b25a" stroke-width="2.5"><polygon points="50,10 58,35 85,35 63,50 71,78 50,60 29,78 37,50 15,35 42,35" fill="#d4b25a"/></g></svg>
+  </div>
+  <h1>جَدِيدُ مَقَالَاتِ السَّلْجُوقِي</h1>
+  <p>دراسات قرآنية وحديثية متعمقة — الشيخ علي خليل عباس السلجوقي</p>
+</header>
+
+<div class="search-wrap">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="ابحث عن مقال بالعنوان أو الموضوع...">
+    <span class="sicon">🔍</span>
+  </div>
+</div>
+
+<div class="stats">
+  <span id="countText">جاري التحميل...</span>
+  <span>مِنبَرُ القرآن والبيان</span>
+</div>
+
+<div class="install-banner" id="installBanner">
+  <div class="itext">ثبّت التطبيق على شاشتك الرئيسية للوصول السريع وللعمل بدون إنترنت</div>
+  <button id="installBtn">تثبيت</button>
+</div>
+
+<div class="grid" id="grid"></div>
+<div class="no-results" id="noResults">لم يتم العثور على مقالات مطابقة لبحثك.</div>
+
+<footer>
+  <div class="fname">جَدِيدُ مَقَالَاتِ السَّلْجُوقِي التَّدَبُّرِيَّة</div>
+  <p>الشيخ علي خليل عباس السلجوقي التركماني الليلاني — العراق</p>
+</footer>
+
+<script src="articles-data.js"></script>
+<script>
+const grid = document.getElementById('grid');
+const countText = document.getElementById('countText');
+const noResults = document.getElementById('noResults');
+
+function renderArticles(list){
+  grid.innerHTML = '';
+  if(list.length === 0){
+    noResults.style.display = 'block';
+    countText.textContent = '0 نتيجة';
+    return;
+  }
+  noResults.style.display = 'none';
+  countText.textContent = list.length + ' مقالاً متاحاً';
+  list.forEach(a => {
+    const card = document.createElement('a');
+    card.className = 'card';
+    card.href = 'articles/' + a.file;
+    card.innerHTML = `
+      <div class="card-accent" style="background:${a.color}"></div>
+      <div class="card-body">
+        <div class="card-cat" style="color:${a.color}">${a.cat}</div>
+        <div class="card-title">${a.title}</div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+renderArticles(ARTICLES);
+
+document.getElementById('searchInput').addEventListener('input', function(e){
+  const q = e.target.value.trim();
+  if(!q){ renderArticles(ARTICLES); return; }
+  const filtered = ARTICLES.filter(a => a.title.includes(q) || a.cat.includes(q));
+  renderArticles(filtered);
+});
+
+// PWA install prompt
+let deferredPrompt;
+const installBanner = document.getElementById('installBanner');
+const installBtn = document.getElementById('installBtn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBanner.classList.add('show');
+});
+
+installBtn.addEventListener('click', async () => {
+  if(!deferredPrompt) return;
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+  deferredPrompt = null;
+  installBanner.classList.remove('show');
+});
+
+window.addEventListener('appinstalled', () => {
+  installBanner.classList.remove('show');
+});
+
+// Register service worker
+if('serviceWorker' in navigator){
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(err => console.log('SW registration failed', err));
+  });
+}
+</script>
+</body>
+</html>
