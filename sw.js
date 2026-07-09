@@ -1,42 +1,40 @@
-const CACHE_NAME = 'seljuki-encyclopedia-v1';
+const CACHE_NAME = 'seljuki-encyclopedia-v2-flat';
 
 const APP_SHELL = [
   './',
   './index.html',
   './manifest.json',
   './articles-data.js',
-  './icons/icon-72.png',
-  './icons/icon-96.png',
-  './icons/icon-128.png',
-  './icons/icon-144.png',
-  './icons/icon-152.png',
-  './icons/icon-192.png',
-  './icons/icon-384.png',
-  './icons/icon-512.png',
-  './articles/arbaa-mahalik.html',
-  './articles/article-ardh-najah.html',
-  './articles/article-hawariyyun-jahl.html',
-  './articles/article-jahl-udhr-v2.html',
-  './articles/article-mahkama-ardh-samaa.html',
-  './articles/article-min-jubb-ila-arsh.html',
-  './articles/article-nafadat-tanzil.html',
-  './articles/article-nasij-samaa-qulub.html',
-  './articles/article-sawt-yasbiqu-suqut.html',
-  './articles/article-yaqub-ruyah.html',
-  './articles/article-yasaa-nur.html',
-  './articles/article-yaudd-anfas.html',
-  './articles/article11-sarab-aldunya.html',
-  './articles/hin-yatakallam-alghayb.html',
-  './articles/kurds_article.html'
+  './icon-72.png',
+  './icon-96.png',
+  './icon-128.png',
+  './icon-144.png',
+  './icon-152.png',
+  './icon-192.png',
+  './icon-384.png',
+  './icon-512.png',
+  './arbaa-mahalik.html',
+  './article-ardh-najah.html',
+  './article-hawariyyun-jahl.html',
+  './article-jahl-udhr-v2.html',
+  './article-mahkama-ardh-samaa.html',
+  './article-min-jubb-ila-arsh.html',
+  './article-nafadat-tanzil.html',
+  './article-nasij-samaa-qulub.html',
+  './article-sawt-yasbiqu-suqut.html',
+  './article-yaqub-ruyah.html',
+  './article-yasaa-nur.html',
+  './article-yaudd-anfas.html',
+  './article11-sarab-aldunya.html',
+  './hin-yatakallam-alghayb.html',
+  './kurds_article.html'
 ];
 
-// Install: cache the app shell and all articles
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(APP_SHELL).catch((err) => {
-        console.log('Cache addAll error (some assets may be external/CDN and are skipped gracefully):', err);
-        // Try caching one by one so a single failure doesn't block everything
+        console.log('Cache addAll error, retrying one by one:', err);
         return Promise.all(
           APP_SHELL.map((url) =>
             cache.add(url).catch((e) => console.log('Failed to cache:', url, e))
@@ -47,7 +45,6 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate: clean old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
@@ -58,7 +55,6 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch: cache-first strategy, fallback to network, then offline fallback
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
@@ -68,7 +64,6 @@ self.addEventListener('fetch', (event) => {
 
       return fetch(event.request)
         .then((networkResponse) => {
-          // Cache new successful same-origin responses for future offline use
           if (networkResponse && networkResponse.status === 200 && event.request.url.startsWith(self.location.origin)) {
             const responseClone = networkResponse.clone();
             caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
@@ -76,7 +71,6 @@ self.addEventListener('fetch', (event) => {
           return networkResponse;
         })
         .catch(() => {
-          // Offline fallback for navigations
           if (event.request.mode === 'navigate') {
             return caches.match('./index.html');
           }

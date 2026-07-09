@@ -7,8 +7,8 @@
 <meta name="description" content="موسوعة السلجوقي — مقالات تدبرية قرآنية وحديثية للشيخ علي خليل عباس السلجوقي التركماني الليلاني">
 <meta name="theme-color" content="#14100a">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="icons/icon-192.png">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="جديد مقالات السلجوقي">
@@ -115,7 +115,7 @@ function renderArticles(list){
   list.forEach(a => {
     const card = document.createElement('a');
     card.className = 'card';
-    card.href = 'articles/' + a.file;
+    card.href = a.file;
     card.innerHTML = `
       <div class="card-accent" style="background:${a.color}"></div>
       <div class="card-body">
